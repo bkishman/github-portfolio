@@ -42,7 +42,7 @@ Users are given R/W/X only to files and and resources they absolutely need in or
 - **Resource Consumption:** 2.2GB
 
 **Security Risk Hypothesis:**
-If Firefox were compromised the attacker would have access to all my saved passwords, browser history, saved credit card information, and potentially serve as a landing spot for malicious users to escape into the operating system for pivoting and/or privilege escalation.
+Firefox is a browser and is the vulnerable as it interacts directly with the internet frequently. It often stores credentials for user accounts, credit card information, or other sensitive personal information. If compromised, an attacker could collect all of this information for follow on attacks or identify theft. Alternatively, credentials could be used for lateral movement elsewhere on the device if credentials are re-used in the network. Firefox could also be used as a landing spot for stage 1 malware with the intent to escape into the operating system proper, potentially with the stolen credentials.
 
 ### Process 2:
 - **Process Name:** Discord.exe
@@ -50,7 +50,7 @@ If Firefox were compromised the attacker would have access to all my saved passw
 - **Resource Consumption:** 267.3MB
 
 **Security Risk Hypothesis:**
-If Discord were compromised, an attacker may be able to steal my authorization tokens for remote access. This could be used to masquerade as me for further attacks. Alternatively, Discrod reads keyboard input and could be used to steal credentials elsewhere on my device.
+If Discord were compromised, an attacker may be able to steal my authorization tokens for remote access. This could be used to masquerade as me for further attacks against other Discord users. Alternatively, while Discord is only run at the standard user level (not admin), Discord reads keyboard input and could be used to steal credentials via keylogger which could enable lateral movement or escalation if they capture admin credentials.
 
 ### Process 3:
 - **Process Name:** NordVPN.exe
@@ -58,7 +58,7 @@ If Discord were compromised, an attacker may be able to steal my authorization t
 - **Resource Consumption:** 156.3MB
 
 **Security Risk Hypothesis:**
-If NordVPN were compromised, an attacker would be able to conduct Adversary-in-the-Middle (AitM) attacks against me, and potentially intercept account credentials, authorization tokens, or inject malicious payloads into my HTTP(S), DNS, or other types of traffic.
+NordVPN runs at the administrator level, and if it were compromised, an attacker would have ability to modify routing tables to redirect my traffic for Adversary-in-the-Middle (AitM) attacks against me. Through AiTM attacks they could potentially intercept account credentials, authorization tokens, or inject malicious payloads into my HTTP(S), DNS, or other types of traffic.
 
 ---
 
