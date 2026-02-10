@@ -12,7 +12,7 @@
 | Operating System | Windows 11 Home version 10.0.26200 |
 | Total Installed RAM | 16 GB |
 | CPU Model & Clock Speed | AMD Ryzen 7 5700U 1801Mhz/1.8Ghz |
-| Storage Capacity: 1 TB |
+| Storage Capacity | 1 TB |
 
 ---
 
