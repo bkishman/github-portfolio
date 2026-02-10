@@ -39,7 +39,7 @@ Users are given R/W/X only to files and and resources they absolutely need in or
 ### Process 1:
 - **Process Name:** Firefox.exe
 - **Process ID (PID):** 2428
-- **Resource Consumption:** 1.6MB
+- **Resource Consumption:** 2.2GB
 
 **Security Risk Hypothesis:**
 If Firefox were compromised the attacker would have access to all my saved passwords, browser history, saved credit card information, and potentially serve as a landing spot for malicious users to escape into the operating system for pivoting and/or privilege escalation.
@@ -47,7 +47,7 @@ If Firefox were compromised the attacker would have access to all my saved passw
 ### Process 2:
 - **Process Name:** Discord.exe
 - **Process ID (PID):** 13128
-- **Resource Consumption:** 86.6MB
+- **Resource Consumption:** 267.3MB
 
 **Security Risk Hypothesis:**
 If Discord were compromised, an attacker may be able to steal my authorization tokens for remote access. This could be used to masquerade as me for further attacks. Alternatively, Discrod reads keyboard input and could be used to steal credentials elsewhere on my device.
