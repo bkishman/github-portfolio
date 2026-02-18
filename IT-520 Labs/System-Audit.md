@@ -21,13 +21,13 @@
 ### Model Definition
 My operating system (Windows 11) uses **Discretionary Access Control (DAC)** as its primary Access Control Model.
 
-**Definition:** Discretionary Access Control (DAC) is a model where the owner of a resource/object manually decides who can read, edit, and execute files. Source: https://csrc.nist.gov/glossary/term/discretionary_access_control
+**Definition:** Discretionary Access Control (DAC) is a model where the owner of a resource/object manually decides who can read, write, and execute (R/W/X) files. Source: https://csrc.nist.gov/glossary/term/discretionary_access_control
 
 ### Relationship to Permissions
-In DAC, the file owner can assign R/W/X permissions to specific users or groups, allowing granular control over who can read, modify, or execute files.
+In DAC, the file owner can assign R/W/X permissions to specific users or groups, allowing granular control over who can read, modify, or execute files. This allows a network administrator to set varying levels of permissions to different groups or individual users based on necessity and the principle of least privilege.
 
 ### Principle of Least Privilege (PoLP) Application
-Users are given R/W/X only to files and and resources they absolutely need in order to do their jobs. In addition, admin users are also given limited privilege, such as when installing system-wide programs. In this case, admins must elevate privileges with user account control (UAC) to approve such changes. This prevents unauthorized users from affecting critical portions of the device or network without logging privilege escalation requests.
+Users are given R/W/X only to files and and resources they absolutely need in order to do their jobs. In addition, admin users are also given limited privilege, such as when installing system-wide programs. In this case, admins must elevate privileges with user account control (UAC) to approve such changes. This prevents unauthorized users from affecting critical portions of the device or network without logging privilege escalation requests. https://csrc.nist.gov/glossary/term/least_privilege
 
 **Concrete Example:**
 - Windows: System32 is a critical filepath in Windows 11. Because of how important Sys32 is, access is limited to the least amount of users as possible. Standard users are not owners of the data and are denied R/W/X capability to Sys32. Administrators cannot R/W/X in Sys32 without elevating privilege through UAC. The system account is the only account considered the owner of Sys32 and therefore has full control.
@@ -42,7 +42,7 @@ Users are given R/W/X only to files and and resources they absolutely need in or
 - **Resource Consumption:** 2.2GB
 
 **Security Risk Hypothesis:**
-Firefox runs at the user level and has lower access, but is often used to store credentials for user accounts, credit card information, or other sensitive personal information. If compromised, an attacker could collect all of this information for follow on attacks or identify theft. Alternatively, credentials could be used for lateral movement elsewhere on the device if credentials are re-used in the network. Firefox could also be used as an initial foothold on a target device with the intent to escape into the operating system proper, potentially with harvested stored credentials.
+Firefox runs at the user level and has lower access, but is often used to store credentials for user accounts, credit card information, or other sensitive personal information. If compromised, an attacker could collect all of this information for follow on attacks or identify theft. Alternatively, credentials could be used for lateral movement elsewhere on the device if credentials are re-used in the network. Firefox could also be used as an initial foothold on a target device with the intent to escape into the operating system proper, potentially with harvested stored credentials. Many incidents begin with footholds in web browsers because they frequently interact with the open internet.
 
 ### Process 2:
 - **Process Name:** Discord.exe
