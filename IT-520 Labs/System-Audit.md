@@ -42,7 +42,7 @@ Users are given R/W/X only to files and and resources they absolutely need in or
 - **Resource Consumption:** 2.2GB
 
 **Security Risk Hypothesis:**
-Firefox runs at the user level and has lower access, but is often used to store credentials for user accounts, credit card information, or other sensitive personal information. If compromised, an attacker could collect all of this information for follow on attacks or identify theft. Alternatively, credentials could be used for lateral movement elsewhere on the device if credentials are re-used in the network. Firefox could also be used as an initial foothold on a target device with the intent to escape into the operating system proper, potentially with harvested stored credentials. Many incidents begin with footholds in web browsers because they frequently interact with the open internet.
+Web browsers frequently interact with the open internet which makes them vulnerable to malicious web pages hosting malware, such as watering holes, or Adversary-in-the-middle (AitM) attacks when unencrypted. Firefox runs at the user level and has lower access, but is often used to store credentials for user accounts, credit card information, or other sensitive personal information. If compromised, an attacker could collect all of this information for follow on attacks or identify theft. Alternatively, credentials could be used for lateral movement elsewhere on the device if credentials are re-used in the network. Firefox could also be used as an initial foothold on a target device with the intent to escape into the operating system proper, potentially with harvested stored credentials.
 
 ### Process 2:
 - **Process Name:** Discord.exe
@@ -50,7 +50,7 @@ Firefox runs at the user level and has lower access, but is often used to store 
 - **Resource Consumption:** 267.3MB
 
 **Security Risk Hypothesis:**
-If Discord were compromised, an attacker may be able to steal my authorization tokens for remote access. This could be used to masquerade as me for further attacks against other Discord users. Alternatively, while Discord is only run at the standard user level (not admin), Discord reads keyboard input and could be used to steal credentials via keylogger which could enable lateral movement or escalation if they capture admin credentials. Because Discord's function is communication, its traffic in and out of a network is not as scrutinized, and it could make for a discreet method of covert data exfiltration.
+Similar to web browsers, Discord frequently interacts with the open internet, but generally interacts directly with the Discrod backend servers instead of privately hosted web resources. However, Discord users are still vulnerable to social engineering attacks, or malicious bots which require installation on private servers. If Discord were compromised, an attacker may be able to steal my authorization tokens for remote access. This could be used to masquerade as me for further attacks against other Discord users. Alternatively, while Discord is only run at the standard user level (not admin), Discord reads keyboard input and could be used to steal credentials via keylogger which could enable lateral movement or escalation if they capture admin credentials. Because Discord's function is communication, its traffic in and out of a network is not as scrutinized, and it could make for a discreet method of covert data exfiltration.
 
 ### Process 3:
 - **Process Name:** NordVPN.exe
@@ -58,7 +58,7 @@ If Discord were compromised, an attacker may be able to steal my authorization t
 - **Resource Consumption:** 156.3MB
 
 **Security Risk Hypothesis:**
-NordVPN runs at the administrator level and at much higher risk for system compromise. If it were compromised, an attacker would have ability to modify routing tables to redirect my traffic for Adversary-in-the-Middle (AitM) attacks against me. Through AiTM attacks they could potentially intercept account credentials, authorization tokens, modify certificates, or direct my traffic to malicious sites or C2 servers hosting malware.
+VPN software is designed to keep users safe; however, users are still vulnerable to social engineering attacks to harvest credentials. NordVPN runs at the administrator level and at much higher risk for system compromise. If it were compromised, an attacker would have ability to modify routing tables to redirect my traffic for Adversary-in-the-Middle (AitM) attacks against me. Through AiTM attacks they could potentially intercept account credentials, authorization tokens, modify certificates, or direct my traffic to malicious sites or C2 servers hosting malware.
 
 ---
 
